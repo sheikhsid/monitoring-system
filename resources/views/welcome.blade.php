@@ -23,7 +23,7 @@
             </header>
 
             <div class="page-heading">
-                <h3>The Name Of Institute</h3>
+                <h3 class="logo"><img src="{{ url('/images/logo/logo.png') }}"><span>The Name Of Institute</span></h3>
             </div>
             <div class="page-content">
                 <section class="row">
@@ -48,7 +48,7 @@
                             <div class="card-content pb-4">
                                 <div class="recent-message d-flex px-4 py-3">
                                     <div class="avatar avatar-lg">
-                                        <img src="{{ url('/images/faces/1.jpg') }}">
+                                        <img src="{{ url('/images/faces/4.jpg') }}">
                                     </div>
                                     <div class="name ms-4">
                                         <h5 class="mb-1">Student Name</h5>
@@ -57,7 +57,7 @@
                                 </div>
                                 <div class="recent-message d-flex px-4 py-3">
                                     <div class="avatar avatar-lg">
-                                        <img src="{{ url('/images/faces/2.jpg') }}">
+                                        <img src="{{ url('/images/faces/4.jpg') }}">
                                     </div>
                                     <div class="name ms-4">
                                         <h5 class="mb-1">Student Name</h5>
@@ -66,7 +66,7 @@
                                 </div>
                                 <div class="recent-message d-flex px-4 py-3">
                                     <div class="avatar avatar-lg">
-                                        <img src="{{ url('/images/faces/3.jpg') }}">
+                                        <img src="{{ url('/images/faces/4.jpg') }}">
                                     </div>
                                     <div class="name ms-4">
                                         <h5 class="mb-1">Student Name</h5>
