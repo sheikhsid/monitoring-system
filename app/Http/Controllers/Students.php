@@ -21,4 +21,59 @@ class Students extends Controller
         return view('/welcome', compact('students','countstudents','roomdata'));
 
     }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $students = Student::all(); 
+
+        return [
+            "status" => 'ALL DATA',
+            "data" => $students,
+        ];
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     */
+    public function show($id)
+    {
+        $students = Student::find($id);
+        
+        return [
+            "status" => 'SINGLE DATA',
+            "data" => $students
+        ];
+    }    
+
+
+    public function update(Request $request, $id)
+    {
+       
+        $request->validate([
+            'room_id'=>'nullable | max:225',
+            'student_name'=>'nullable | max:225',
+            'ip_address'=>'nullable | max:225'
+        ]);
+
+        $data = $request->all();
+        $student = Student::where('id', $id)->firstOrFail();
+        $student->fill($data);
+        $student->save();
+    
+        $jsonData = [
+            'status' => 'SUCCESS',
+            'data' => [
+                'room_id' => $student->room_id,
+                'student_name' => $student->student_name,
+                'ip_address' => $student->ip_address,
+            ]
+        ];
+    
+        return response()->json($jsonData);
+    }
+
 }
