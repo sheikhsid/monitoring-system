@@ -81,7 +81,7 @@
                         <p>Immensive Monitoring System</p>
                     </div>
                     <div class="float-end">
-                        <p>All Rights Reserved by <a href="#">Immensive</a>.</p>
+                        <p>All Rights Reserved by <a href="https://www.immensive.it/" target="_blank">Immensive</a>.</p>
                     </div>
                 </div>
             </footer>
