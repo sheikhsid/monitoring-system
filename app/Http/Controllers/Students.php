@@ -22,6 +22,19 @@ class Students extends Controller
 
     }
 
+    //Get Data for view
+    function viewData($id){
+
+        $data= Student::find($id);
+
+        $students = Student::all();
+        $countstudents = Student::all()->count();
+        $roomdata = Room::all()->where('id',"1");
+
+        return view('/view',['data'=>$data, 'students'=>$students, 'countstudents'=>$countstudents, 'roomdata'=>$roomdata]);   
+
+    }
+
     /**
      * Display a listing of the resource.
      */

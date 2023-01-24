@@ -286,10 +286,7 @@
 .card .card-header {
     border: none;
 }
-.card .card-header h4 {
-    font-size: 1.2rem;
-    font-weight: 700;
-}
+.card .card-header h4 {margin-top: 13px;font-size: 1.2rem;font-weight: 700;}
 .card .card-header ~ .card-body {
     padding-top: 0;
 }
@@ -302,7 +299,7 @@
 .card .card-body {
     padding: 1.5rem;
 }.card .card-body h5 {
-    margin-top: 25px;
+    margin-top: 15px;
 }
 .card .card-heading {
     color: #555;
@@ -1277,4 +1274,20 @@ a {
 }
 .icon-mid:before {
     vertical-align: middle;
+}h5 a {
+    color: #25396f;
 }
+@media only screen and (max-width: 480px) {
+    h3.logo {
+        text-align: center;
+    }
+    h3.logo span {
+        float: initial;
+        font-size: 18px;
+        margin-top: 10px;
+        display: block;
+    }.float-start, .float-end {
+        float: initial !important;
+        text-align: center;
+    }
+  }

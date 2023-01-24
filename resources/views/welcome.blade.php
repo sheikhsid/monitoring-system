@@ -23,7 +23,7 @@
             </header>
             @foreach($roomdata as $roomdata) 
             <div class="page-heading">
-                <h3 class="logo"><img src="{{ url('/images/logo/logo.png') }}"><span>{{$roomdata['room']}}</span></h3>
+                <h3 class="logo"><img src="{{ url('/images/logo/logo.png') }}"><span><a href="/monitoring-system/public/">{{$roomdata['room']}}</a></span></h3>
             </div>
             <div class="page-content">
                 <section class="row">
@@ -36,7 +36,6 @@
                                     </div>
                                     <div class="ms-3 name">
                                         <h5 class="font-bold">{{$roomdata['tutor']}}</h5>
-                                        <h6 class="text-muted mb-0">Localhost</h6>
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +52,7 @@
                                         <img src="{{ url('/images/faces/4.jpg') }}">
                                     </div>
                                     <div class="name ms-4">
-                                        <h5 class="mb-1">{{$student['student_name']}}</h5>
+                                        <h5 class="mb-1"><a href="{{"/monitoring-system/public/view/".$student['id']}}">{{$student['student_name']}}</a></h5>
                                         <h6 class="text-muted mb-0">{{$student['ip_address']}}</h6>
                                     </div>
                                 </div>
@@ -138,7 +137,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <iframe src="http://{{$student['ip_address']}}:80" title="" width="100%" height="250"></iframe>
-                                        <h5>{{$student['student_name']}}</h5>
+                                        <h5><a href="{{"/monitoring-system/public/view/".$student['id']}}">{{$student['student_name']}}</a></h5>
                                     </div>
                                 </div>
                             </div>

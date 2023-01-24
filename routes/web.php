@@ -15,3 +15,4 @@ use App\Http\Controllers\Students;
 */
 
 Route::get('/',[Students::class,'getData'])->name('/');
+Route::get('/view/{id}',[Students::class,'viewData'])->name('/view');
