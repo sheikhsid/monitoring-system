@@ -21,9 +21,9 @@
                     <i class="bi bi-justify fs-3"></i>
                 </a>
             </header>
-
+            @foreach($roomdata as $roomdata) 
             <div class="page-heading">
-                <h3 class="logo"><img src="{{ url('/images/logo/logo.png') }}"><span>The Name Of Institute</span></h3>
+                <h3 class="logo"><img src="{{ url('/images/logo/logo.png') }}"><span>{{$roomdata['room']}}</span></h3>
             </div>
             <div class="page-content">
                 <section class="row">
@@ -35,44 +35,29 @@
                                         <img src="{{ url('/images/faces/1.jpg') }}" alt="Face 1">
                                     </div>
                                     <div class="ms-3 name">
-                                        <h5 class="font-bold">Tutor Name</h5>
-                                        <h6 class="text-muted mb-0">IP Address</h6>
+                                        <h5 class="font-bold">{{$roomdata['tutor']}}</h5>
+                                        <h6 class="text-muted mb-0">Localhost</h6>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                         <div class="card">
                             <div class="card-header">
-                                <h4>List Of Students</h4>
+                                <h4>List Of Students ({{ $countstudents }})</h4>
                             </div>
                             <div class="card-content pb-4">
+                            @foreach($students as $student) 
                                 <div class="recent-message d-flex px-4 py-3">
                                     <div class="avatar avatar-lg">
                                         <img src="{{ url('/images/faces/4.jpg') }}">
                                     </div>
                                     <div class="name ms-4">
-                                        <h5 class="mb-1">Student Name</h5>
-                                        <h6 class="text-muted mb-0">IP Address</h6>
+                                        <h5 class="mb-1">{{$student['student_name']}}</h5>
+                                        <h6 class="text-muted mb-0">{{$student['ip_address']}}</h6>
                                     </div>
                                 </div>
-                                <div class="recent-message d-flex px-4 py-3">
-                                    <div class="avatar avatar-lg">
-                                        <img src="{{ url('/images/faces/4.jpg') }}">
-                                    </div>
-                                    <div class="name ms-4">
-                                        <h5 class="mb-1">Student Name</h5>
-                                        <h6 class="text-muted mb-0">IP Address</h6>
-                                    </div>
-                                </div>
-                                <div class="recent-message d-flex px-4 py-3">
-                                    <div class="avatar avatar-lg">
-                                        <img src="{{ url('/images/faces/4.jpg') }}">
-                                    </div>
-                                    <div class="name ms-4">
-                                        <h5 class="mb-1">Student Name</h5>
-                                        <h6 class="text-muted mb-0">IP Address</h6>
-                                    </div>
-                                </div>
+                            @endforeach
                             </div>
                         </div>
                     </div>
@@ -148,38 +133,16 @@
                             </div>
                         </div>
                         <div class="row">
+                        @foreach($students as $student) 
                             <div class="col-12 col-xl-4">
                                 <div class="card">
-                                    <div class="card-header">
-                                        <h4>Student Name</h4>
-                                    </div>
                                     <div class="card-body">
-                                        <iframe src="http://127.0.0.1:80" title="" width="100%" height="250"></iframe>
+                                        <iframe src="http://{{$student['ip_address']}}:80" title="" width="100%" height="250"></iframe>
+                                        <h5>{{$student['student_name']}}</h5>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col-12 col-xl-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4>Student Name</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <iframe src="http://127.0.0.1:80" title="" width="100%" height="250"></iframe>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-xl-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4>Student Name</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <iframe src="http://127.0.0.1:80" title="" width="100%" height="250"></iframe>
-                                    </div>
-                                </div>
-                            </div>
+                        @endforeach                        
                         </div>
                     </div>
                 </section>

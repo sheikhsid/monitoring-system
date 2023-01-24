@@ -301,6 +301,8 @@
 }
 .card .card-body {
     padding: 1.5rem;
+}.card .card-body h5 {
+    margin-top: 25px;
 }
 .card .card-heading {
     color: #555;

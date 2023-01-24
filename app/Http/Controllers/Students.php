@@ -15,10 +15,10 @@ class Students extends Controller
         $students = Student::all();
         $countstudents = Student::all()->count();
 
-        $roomdata = Room::all();
+        $roomdata = Room::all()->where('id',"1");
         
 
-        return view('/welcome', compact('students','countstudents'));
+        return view('/welcome', compact('students','countstudents','roomdata'));
 
     }
 }
