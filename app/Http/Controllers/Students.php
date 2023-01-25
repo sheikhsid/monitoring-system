@@ -22,6 +22,38 @@ class Students extends Controller
 
     }
 
+    //Get Data
+    Public function Data(){
+
+        
+        $students = Student::all();
+        $countstudents = Student::all()->count();
+
+        $roomdata = Room::all()->where('id',"1");
+        
+
+        return view('/add', compact('students','countstudents','roomdata'));
+
+    }
+
+    //Check validation and add product
+    function addData(Request $req){
+
+        $req->validate([
+            'student_name'=>'required | max:225',
+            'ip_address'=>'required | max:225'
+        ]);
+
+        $student= new Student;
+        $student->room_id=1;
+        $student->student_name=$req->student_name.'';
+        $student->ip_address=$req->ip_address.'';
+        $student->save();
+
+        return redirect('/home');
+
+    }
+
     //Get Data for view
     function viewData($id){
 
@@ -32,6 +64,15 @@ class Students extends Controller
         $roomdata = Room::all()->where('id',"1");
 
         return view('/view',['data'=>$data, 'students'=>$students, 'countstudents'=>$countstudents, 'roomdata'=>$roomdata]);   
+
+    }
+
+    //Delete Data
+    function deleteData($id){
+
+        $data= Student::find($id);
+        $data->delete();  
+        return redirect('/home');      
 
     }
 
