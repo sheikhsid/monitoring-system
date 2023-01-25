@@ -286,7 +286,7 @@
 .card .card-header {
     border: none;
 }
-.card .card-header h4 {margin-top: 13px;font-size: 1.2rem;font-weight: 700;}
+.card .card-header h4 {font-size: 1.2rem;font-weight: 700;}
 .card .card-header ~ .card-body {
     padding-top: 0;
 }
@@ -1289,6 +1289,11 @@ a {
     vertical-align: middle;
 }h5 a {
     color: #25396f;
+}.name h5 img {
+    width: 18px;
+    margin-left: 10px;
+    position: absolute;
+    right: 40px;
 }
 @media only screen and (max-width: 480px) {
     h3.logo {

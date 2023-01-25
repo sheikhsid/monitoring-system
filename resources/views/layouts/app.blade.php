@@ -22,11 +22,12 @@
                 </a>
             </header>
             <div class="page-heading">
-                <h3 class="logo"><img src="{{ url('/images/logo/logo.png') }}">
+                <h3 class="logo"><a href="/monitoring-system/public/home"><img src="{{ url('/images/logo/logo.png') }}"></a>
                 @if (Auth::check())
                 <span>
                     <ul>
-                        <li><a href="/monitoring-system/public/logout">Setting</a></li>
+                        <li><a href="/monitoring-system/public/home">Home</a></li>
+                        <li><a href="/monitoring-system/public/add">Add New</a></li>
                         <li><a href="/monitoring-system/public/logout">Logout</a></li>
                     </ul>
                 </span>

@@ -31,7 +31,10 @@
                                         <img src="{{ url('/images/faces/4.jpg') }}">
                                     </div>
                                     <div class="name ms-4">
-                                        <h5 class="mb-1"><a href="{{"/monitoring-system/public/view/".$student['id']}}">{{$student['student_name']}}</a></h5>
+                                        <h5 class="mb-1">
+                                            <a href="{{"/monitoring-system/public/view/".$student['id']}}">{{$student['student_name']}}</a>
+                                            <a href="{{"/monitoring-system/public/delete/".$student['id']}}"><img src="{{ url('/images/icon/trash.png') }}" alt="trash"></a>
+                                        </h5>
                                         <h6 class="text-muted mb-0">{{$student['ip_address']}}</h6>
                                     </div>
                                 </div>
