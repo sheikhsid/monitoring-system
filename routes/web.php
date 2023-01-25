@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Students;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,5 @@ Route::middleware('auth')->group(function () {
 Route::get('/home',[Students::class,'getData'])->name('/');
 Route::get('/view/{id}',[Students::class,'viewData'])->name('/view');
 
-
-
+Route::get('/logout',[LoginController::class,'logout'])->name('/logout');
 });

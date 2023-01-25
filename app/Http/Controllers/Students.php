@@ -18,7 +18,7 @@ class Students extends Controller
         $roomdata = Room::all()->where('id',"1");
         
 
-        return view('/welcome', compact('students','countstudents','roomdata'));
+        return view('/home', compact('students','countstudents','roomdata'));
 
     }
 
