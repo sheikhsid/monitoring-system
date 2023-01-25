@@ -14,5 +14,14 @@ use App\Http\Controllers\Students;
 |
 */
 
-Route::get('/',[Students::class,'getData'])->name('/');
+Auth::routes(['register' => false]);
+
+Route::middleware('auth')->group(function () {
+
+
+Route::get('/home',[Students::class,'getData'])->name('/');
 Route::get('/view/{id}',[Students::class,'viewData'])->name('/view');
+
+
+
+});
