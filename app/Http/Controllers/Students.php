@@ -63,7 +63,7 @@ class Students extends Controller
     public function store(Request $request)
     {
         $student = new Student;
-        $student->room_id = $request->room_id;
+        $student->room_id = "1";
         $student->student_name = $request->student_name;
         $student->ip_address = $request->ip_address;
         $student->save();
