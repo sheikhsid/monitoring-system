@@ -19,4 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('students', Students::class);
+Route::get("students", [Students::class,'index']);
+Route::get("students/{id}", [Students::class,'show']);
+Route::post("students/add", [Students::class,'store']);
+Route::delete("students/{id}", [Students::class,'destroy']);

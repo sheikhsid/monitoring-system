@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="{{ url('/images/favicon.svg') }}" type="image/x-icon">
 </head>
 
-<body>
+<body style="background-image: url({{ url('/images/background.jpg') }});">
     <div id="app">
         <div id="main">
             <header class="mb-3">
@@ -27,7 +27,6 @@
                 <span>
                     <ul>
                         <li><a href="/monitoring-system/public/home">Home</a></li>
-                        <li><a href="/monitoring-system/public/add">Add New</a></li>
                         <li><a href="/monitoring-system/public/logout">Logout</a></li>
                     </ul>
                 </span>

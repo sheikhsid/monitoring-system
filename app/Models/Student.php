@@ -9,5 +9,9 @@ class Student extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $guarded = [
+        'room_id', 
+        'student_name', 
+        'ip_address',
+    ];
 }

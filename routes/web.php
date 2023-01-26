@@ -22,11 +22,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/',[Students::class,'getData'])->name('/');
 Route::get('/home',[Students::class,'getData'])->name('/home');
 
-Route::get('/add',[Students::class,'Data'])->name('/add');
-Route::post("/add",[Students::class,'addData'])->name('/add');
-
 Route::get('/view/{id}',[Students::class,'viewData'])->name('/view');
-Route::get('/delete/{id}',[Students::class,'deleteData'])->name('/delete');
 
 Route::get('/logout',[LoginController::class,'logout'])->name('/logout');
 });
