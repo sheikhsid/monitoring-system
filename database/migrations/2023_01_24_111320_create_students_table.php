@@ -17,7 +17,7 @@ class CreateStudentsTable extends Migration
             $table->id();
             $table->string('room_id');
             $table->string('student_name');
-            $table->string('ip_address');
+            $table->string('ip_address')->unique();
             $table->timestamps();
         });
     }

@@ -16,6 +16,7 @@ use App\Http\Controllers\Auth\LoginController;
 */
 
 Auth::routes(['register' => false]);
+// Auth::routes();
 
 Route::middleware('auth')->group(function () {
 
