@@ -89,7 +89,7 @@
                                             </div>
                                             <div class="col-md-8">
                                                 <h6 class="text-muted font-semibold">Online Students</h6>
-                                                <h6 class="font-extrabold mb-0">80.000</h6>
+                                                <h6 class="font-extrabold mb-0">80.000</h6> 
                                             </div>
                                         </div>
                                     </div>
@@ -118,7 +118,7 @@
                             <div class="col-12 col-xl-4">
                                 <div class="card">
                                     <div class="card-body">
-                                        <iframe src="http://{{$student['ip_address']}}:80" title="" width="100%" height="250"></iframe>
+                                        <iframe src="https://{{$student['ip_address']}}:443" title="" width="100%" height="250"></iframe>
                                         <h5><a href="{{"/monitoring-system/public/view/".$student['id']}}">{{$student['student_name']}}</a></h5>
                                     </div>
                                 </div>
