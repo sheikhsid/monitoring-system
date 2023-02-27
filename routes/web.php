@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Data;
 use App\Http\Controllers\Students;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 
 
@@ -32,7 +33,10 @@ Route::middleware('auth','isAdmin')->group(function () {
 Route::middleware('auth')->group(function () {
 
     Route::get('/',[Students::class,'getData'])->name('/');
-    Route::get('/home',[Students::class,'getData'])->name('/home');
+
+    Route::get('/home',[Students::class,'viewRooms'])->name('/home');
+
+    Route::get('/room',[Students::class,'getData'])->name('/room');
 
     Route::get('/view/{id}',[Students::class,'viewData'])->name('/view');
 

@@ -44,7 +44,7 @@
                                                 </div>
                                                 <div class="col-md-4 col-12">
                                                     <div class="form-group">
-                                                    <select class="form-control" name="institute" required>
+                                                    <select class="form-control" name="school" required>
                                                         <option value="" class="none">Select School</option>
                                                         @foreach($users as $user)
                                                         <option value="{{$user['id']}}">{{$user['name']}}</option>

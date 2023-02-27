@@ -2,12 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Student;
 use App\Models\Room;
 
 class Students extends Controller
 {
+    
+    // Get list from database
+    function viewRooms(){
+
+        $rooms = Room::all()->where('school', (Auth::user()->id));
+
+        return view('/home',['rooms'=>$rooms]);
+
+    }
+
     //Get Student Data
     Public function getData(){
 
@@ -18,7 +29,7 @@ class Students extends Controller
         $roomdata = Room::all()->where('id',"1");
         
 
-        return view('/home', compact('students','countstudents','roomdata'));
+        return view('/room', compact('students','countstudents','roomdata'));
 
     }
 

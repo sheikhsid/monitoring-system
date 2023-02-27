@@ -23,7 +23,7 @@ class Data extends Controller
          
         $room= new Room;
         $room->room=$req->room;
-        $room->institute=$req->institute;
+        $room->school=$req->school;
         $room->nos=$req->nos;
        echo  $room->save();
         
