@@ -9,15 +9,6 @@ use App\Models\Room;
 class Students extends Controller
 {
     //Get Student Data
-    Public function getIP(){
-
-        $userIP = request()->ip();
-
-        return view('/welcome', compact('userIP'));
-
-    }
-
-    //Get Student Data
     Public function getData(){
 
         
@@ -25,6 +16,7 @@ class Students extends Controller
         $countstudents = Student::all()->count();
 
         $roomdata = Room::all()->where('id',"1");
+        
 
         return view('/home', compact('students','countstudents','roomdata'));
 

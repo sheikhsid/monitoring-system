@@ -9,7 +9,7 @@
     <meta name="theme-color" content="#6777ef"/>
     <link rel="apple-touch-icon" href="{{ asset('favicon.png') }}">
     <link rel="manifest" href="{{ asset('/manifest.json') }}">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url('/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url('/css/app.css') }}">
@@ -25,12 +25,12 @@
                 </a>
             </header>
             <div class="page-heading">
-                <h3 class="logo"><a href="/monitoring-system/public/home"><img src="{{ url('/images/logo/logo.png') }}"></a>
+                <h3 class="logo"><a href="/home"><img src="{{ url('/images/logo/logo.png') }}"></a>
                 @if (Auth::check())
                 <span>
                     <ul>
-                        <li><a href="/monitoring-system/public/home">Home</a></li>
-                        <li><a href="/monitoring-system/public/logout">Logout</a></li>
+                        <li><a href="/home">Home</a></li>
+                        <li><a href="/logout">Logout</a></li>
                     </ul>
                 </span>
                         
