@@ -1302,14 +1302,16 @@ a {
     right: 30px;
     font-size: 16px;
 }form {
-    padding-top: 40px;
+    padding-top: 27px;
 }.admin .page-heading.school {
     display: none;
 }
 .admin #main {
     padding: 2rem 2rem 2rem 21rem;
 }
-
+option.none {
+    font-size: 0;
+}
 @media only screen and (max-width: 480px) {
     h3.logo {
         text-align: center;

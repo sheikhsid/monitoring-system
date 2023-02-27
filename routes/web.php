@@ -16,18 +16,16 @@ use App\Http\Controllers\Auth\LoginController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
-
 Auth::routes();
-
 
 Route::middleware('auth','isAdmin')->group(function () {
 
     Route::get('/admin', function () { return view('admin/home'); });
     Route::get('/admin/schools', function () { return view('admin/schools'); });
     Route::get('/admin/rooms', function () { return view('admin/rooms'); });
-    Route::post("/admin/schools",[Data::class,'addSchool'])->name('/admin/schools');
+
+    Route::get('/admin/rooms',[Data::class,'getRooms'])->name('/admin/rooms');
+    Route::post('/admin/rooms',[Data::class,'addRoom'])->name('/admin/rooms');
     
 });
 
