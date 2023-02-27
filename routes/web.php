@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Students;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +16,22 @@ use App\Http\Controllers\Auth\LoginController;
 |
 */
 
+
+
 Auth::routes(['register' => false]);
-// Auth::routes();
+
+
+Route::middleware('auth','isAdmin')->group(function () {
+
+    Route::get('/admin', function () { return view('admin/home'); });
+    Route::get('/admin/schools', function () { return view('admin/schools'); });
+    Route::post("/admin/schools",[RegisterController::class,'create'])->name('/admin/schools');
+
+});
 
 Route::middleware('auth')->group(function () {
+
+
 
 Route::get('/',[Students::class,'getData'])->name('/');
 Route::get('/home',[Students::class,'getData'])->name('/home');

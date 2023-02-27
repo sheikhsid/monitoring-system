@@ -748,7 +748,7 @@
     top: 0;
     z-index: 10;
     overflow-y: auto;
-    background-color: #fff;
+    background-color: #12181b;
     bottom: 0;
     transition: left 0.5s ease-out;
 }
@@ -758,7 +758,7 @@
     font-weight: 700;
 }
 .sidebar-wrapper .sidebar-header img {
-    height: 1.2rem;
+    height: 3rem;
 }
 .sidebar-wrapper .sidebar-toggler.x {
     position: absolute;
@@ -788,17 +788,17 @@
     border-radius: 0.5rem;
     transition: all 0.5s;
     text-decoration: none;
-    color: #25396f;
+    color: #ffffff;
 }
 .sidebar-wrapper .menu .sidebar-link i,
 .sidebar-wrapper .menu .sidebar-link svg {
-    color: #7c8db5;
+    color: #ffffff;
 }
 .sidebar-wrapper .menu .sidebar-link span {
     margin-left: 1rem;
 }
 .sidebar-wrapper .menu .sidebar-link:hover {
-    background-color: #f0f1f5;
+    background-color: #55b3c4;
 }
 .sidebar-wrapper .menu .sidebar-item {
     list-style: none;
@@ -814,7 +814,7 @@
     display: block;
 }
 .sidebar-wrapper .menu .sidebar-item.active .sidebar-link {
-    background-color: #435ebe;
+    background-color: #55b3c4;
 }
 .sidebar-wrapper .menu .sidebar-item.active .sidebar-link span {
     color: #fff;
@@ -1001,7 +1001,7 @@
 }
 .dataTable-table:not(.table-borderless) thead th,
 .table:not(.table-borderless) thead th {
-    border-bottom: 1px solid #dedede !important;
+    border-bottom: 1px solid #ffffff !important;
 }
 .table-md.dataTable-table tr td,
 .table-md.dataTable-table tr th,
@@ -1303,7 +1303,13 @@ a {
     font-size: 16px;
 }form {
     padding-top: 40px;
+}.admin .page-heading.school {
+    display: none;
 }
+.admin #main {
+    padding: 2rem 2rem 2rem 21rem;
+}
+
 @media only screen and (max-width: 480px) {
     h3.logo {
         text-align: center;

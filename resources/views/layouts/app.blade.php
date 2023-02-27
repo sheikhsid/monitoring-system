@@ -9,22 +9,26 @@
     <meta name="theme-color" content="#6777ef"/>
     <link rel="apple-touch-icon" href="{{ asset('favicon.png') }}">
     <link rel="manifest" href="{{ asset('/manifest.json') }}">
-    
+
+
+    <link rel="stylesheet" href="{{ url('/vendors/iconly/bold.css') }}">
+    <link rel="stylesheet" href="{{ url('/vendors/bootstrap-icons/bootstrap-icons.css') }}">
+
+
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url('/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url('/css/app.css') }}">
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}" type="image/x-icon">
 </head>
 
-<body style="background-image: url({{ url('/images/background.jpg') }});">
-    <div id="app">
+<body style="background-image: url({{ url('/images/background.jpg') }});" class="{{ Auth::user()->role_as }}">
         <div id="main">
             <header class="mb-3">
                 <a href="#" class="burger-btn d-block d-xl-none">
                     <i class="bi bi-justify fs-3"></i>
                 </a>
-            </header>
-            <div class="page-heading">
+            </header>          
+            <div class="page-heading school">
                 <h3 class="logo"><a href="/home"><img src="{{ url('/images/logo/logo.png') }}"></a>
                 @if (Auth::check())
                 <span>
@@ -33,13 +37,12 @@
                         <li><a href="/logout">Logout</a></li>
                     </ul>
                 </span>
-                        
-                @endif
-                @if (Auth::guest())
+                @elseif (Auth::guest())
                     <span></span>
                 @endif
                 </h3>
             </div>
+
 
         <main class="py-4">
             @yield('content')
@@ -56,7 +59,7 @@
                 </div>
             </footer>
         </div>
-    </div>
+        
     <script src="{{ asset('/sw.js') }}"></script>
     <script>
         if (!navigator.serviceWorker.controller) {

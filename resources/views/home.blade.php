@@ -2,6 +2,12 @@
 
 @section('content')
 
+
+
+@if (Auth::user()->role_as == '7')
+    <script>window.location = "/admin";</script>
+@endif
+
 <div class="page-content">
                 <section class="row">
                     <div class="col-12 col-lg-2">
