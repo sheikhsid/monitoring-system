@@ -21,7 +21,7 @@
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}" type="image/x-icon">
 </head>
 
-<body style="background-image: url({{ url('/images/background.jpg') }});" class="{{ Auth::user()->role_as }}">
+<body style="background-image: url({{ url('/images/background.jpg') }});">
         <div id="main">
             <header class="mb-3">
                 <a href="#" class="burger-btn d-block d-xl-none">
