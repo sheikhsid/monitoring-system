@@ -66,7 +66,7 @@ class Data extends Controller
         $room= new Room;
         $room->room=$req->room;
         $room->school=$req->school;
-        $room->nos=$req->nos;
+        $room->nos=$req->nos.'';
        echo  $room->save();
         
         return redirect('/admin/rooms');

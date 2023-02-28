@@ -1312,7 +1312,7 @@ a {
 option.none {
     font-size: 0;
 }.card.pop .card-body img {
-    width: 310px;
+    width: 85%;
     padding-bottom: 30px;
 }.card.pop:hover {
     transform: scale(1.05);
@@ -1350,5 +1350,12 @@ option.none {
     }
     .admin #main {
         padding: 2rem;
+    }h3.logo span ul li {
+        padding: 5px;
+        margin: 0 20px 0 0;
+    }h1.welcome-heading {
+        margin-bottom: 40px;
+    }h3.logo span {
+        margin-top: 30px;
     }
   }

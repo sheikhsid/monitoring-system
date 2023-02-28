@@ -8,7 +8,7 @@
 
 <div class="page-content">
                 <section class="row justify-content-center">
-                    <div class="col-12 col-md-8">
+                    <div class="col-12 col-md-12 col-lg-8 ">
                         <h1 class="welcome-heading">{{ Auth::user()->name }}</h1>
                         <div class="row align-items-center">
                         @foreach($rooms as $room) 

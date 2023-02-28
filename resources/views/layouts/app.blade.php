@@ -4,27 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Immensive Monitoring System</title>
+    <title>Weld Monitoring System</title>
     <!-- PWA  -->
-    <meta name="theme-color" content="#6777ef"/>
+    <meta name="theme-color" content="#1f262e"/>
     <link rel="apple-touch-icon" href="{{ asset('favicon.png') }}">
     <link rel="manifest" href="{{ asset('/manifest.json') }}">
 
 
-    <link rel="stylesheet" href="{{ url('/vendors/iconly/bold.css') }}">
-    <link rel="stylesheet" href="{{ url('/vendors/bootstrap-icons/bootstrap-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('/vendors/iconly/bold.css') }}">
+    <link rel="stylesheet" href="{{ asset('/vendors/bootstrap-icons/bootstrap-icons.css') }}">
 
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url('/css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ url('/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}" type="image/x-icon">
 </head>
 
-<body style="background-image: url({{ url('/images/background.jpg') }});">
+<body style="background-image: url({{ asset('/images/background.jpg') }});">
         <div id="main">         
             <div class="page-heading school">
-                <h3 class="logo"><a href="/home"><img src="{{ url('/images/logo/logo.png') }}"></a>
+                <h3 class="logo"><a href="/home"><img src="{{ asset('/images/logo/logo.png') }}"></a>
                 @if (Auth::check())
                 <span>
                     <ul>

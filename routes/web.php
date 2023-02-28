@@ -32,7 +32,7 @@ Route::middleware('auth','isAdmin')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-
+    
     Route::get('/',[Students::class,'viewRooms'])->name('/');
 
     Route::get('/home',[Students::class,'viewRooms'])->name('/home');

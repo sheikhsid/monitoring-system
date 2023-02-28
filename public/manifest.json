@@ -1,11 +1,11 @@
 {
     "name": "Weld Monitoring System",
-    "short_name": "LPT",
-    "start_url": "/index.php",
-    "background_color": "#6777ef",
+    "short_name": "WMS",
+    "start_url": "/home",
+    "background_color": "#1f262e",
     "description": "Weld Monitoring System",
     "display": "fullscreen",
-    "theme_color": "#6777ef",
+    "theme_color": "#1f262e",
     "icons": [
         {
             "src": "favicon.png",
