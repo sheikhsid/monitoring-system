@@ -13,7 +13,7 @@
                 <div class="sidebar-menu">
                     <ul class="menu">
 
-                        <li class="sidebar-item">
+                        <li class="sidebar-item active">
                             <a href="/admin" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Dashboard</span>
@@ -22,20 +22,20 @@
 
                         <li class="sidebar-item">
                             <a href="/admin/schools" class='sidebar-link'>
-                                <i class="bi bi-stack"></i>
+                                <i class="bi bi-building"></i>
                                 <span>All Schools</span>
                             </a>
                         </li>
 
                         <li class="sidebar-item">
                             <a href="/admin/rooms" class='sidebar-link'>
-                                <i class="bi bi-stack"></i>
+                                <i class="bi bi-display"></i>
                                 <span>All Rooms</span>
                             </a>
                         </li>
-                        <li class="sidebar-item active">
+                        <li class="sidebar-item" style="position: absolute !important;bottom: 50px;">
                             <a href="/logout" class='sidebar-link'>
-                                <i class="bi bi-stack"></i>
+                                <i class="bi bi-power"></i>
                                 <span>Logout</span>
                             </a>
                         </li>

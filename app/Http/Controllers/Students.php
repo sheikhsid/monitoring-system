@@ -26,9 +26,10 @@ class Students extends Controller
         $room= Room::find($id);
 
         $students = Student::all()->where('room_id', $id);
-        $countstudents = Student::all()->count();      
+        $countstudents = Student::all()->where('room_id', $id)->count();
+        $users = User::all('id','name', 'role_as')->where('role_as',"0");   
 
-        return view('/room', compact('room','students','countstudents'));
+        return view('/room', compact('room','students','countstudents','users'));
 
     }
 
@@ -52,18 +53,18 @@ class Students extends Controller
 
     public function getSchoolapi()
     {
-        $schools = User::all('id','name', 'role_as')->where('role_as',"0");
+        $schools = User::all('id','name', 'role_as')->where('role_as',"0")->toArray();
 
         return [
             "status" => "All School",
-            "schools" => $schools
+            "schools" => array_values($schools)
         ];
     }  
 
     public function show($id)
     {
         $school = User::all('id','name')->find($id);
-        $rooms = Room::all('id','room','school')->where('school' , ($school->id))   ;
+        $rooms = Room::all('id','room','school')->where('school' , ($school->id));
         
         return [
             "status" => "School Data",

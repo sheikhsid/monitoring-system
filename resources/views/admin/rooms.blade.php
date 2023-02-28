@@ -36,13 +36,13 @@
                                     <form action="/admin/rooms" method="POST">
                                         @csrf
                                             <div class="row">
-                                                <div class="col-md-4 col-12">
+                                                <div class="col-md-5 col-12">
                                                     <div class="form-group">
                                                         <input type="text" id="email-id-column" class="form-control" placeholder="Room Name" name="room" required>
-                                                        <div class="invalid-feedback"> @error('room'){{$message}}@enderror </div> 
+                                                        @error('room'){{$message}}@enderror
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4 col-12">
+                                                <div class="col-md-5 col-12">
                                                     <div class="form-group">
                                                     <select class="form-control" name="school" required>
                                                         <option value="" class="none">Select School</option>
@@ -50,13 +50,7 @@
                                                         <option value="{{$user['id']}}">{{$user['name']}}</option>
                                                         @endforeach
                                                     </select>
-                                                    <div class="invalid-feedback"> @error('institute'){{$message}}@enderror </div> 
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-2 col-12">
-                                                    <div class="form-group">
-                                                        <input type="number" id="email-id-column" class="form-control" placeholder="Number of Students" name="nos" required>
-                                                        <div class="invalid-feedback"> @error('nos'){{$message}}@enderror </div> 
+                                                    @error('institute'){{$message}}@enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2 col-12">
@@ -80,7 +74,6 @@
                                                     <tr>
                                                         <th>Room Name</th>
                                                         <th>School Name</th>
-                                                        <th>Number of Students</th>
                                                         <th>Created Date</th>
                                                         <th>Action</th>
                                                     </tr>
@@ -97,11 +90,10 @@
                                                             @endif
                                                             @endforeach
                                                         </td>
-                                                        <td class="col-auto">{{$room['nos']}}</td>
                                                         <td class="col-auto">{{$room['created_at']}}</td>
-                                                        <td class="col-auto">
-                                                        <a href=""><i class="bi bi-stack"></i></a>
-                                                        <a href=""><i class="bi bi-stack"></i></a>
+                                                        <td class="col-1">
+                                                        <a href="/room/{{$room['id']}}" target="_blank" style="margin-right: 10px;"><i class="bi bi-eye"></i></a>
+                                                        <a href="/admin/room/{{$room['id']}}"><i class="bi bi-trash"></i></a>
                                                         </td>
                                                     </tr>
                                                 @endforeach

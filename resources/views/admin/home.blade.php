@@ -103,15 +103,13 @@
                                                     <tr>
                                                         <th>School Name</th>
                                                         <th>Room Name</th>
-                                                        <th>No. of Students</th>
                                                         <th>Created Date</th>
-                                                        <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                 @foreach($rooms as $room)
                                                     <tr>
-                                                        <td class="col-3">{{$room['room']}}</td>
+                                                        <td class="col-auto">{{$room['room']}}</td>
                                                         <td class="col-auto">
                                                             @foreach($users as $user)
                                                             @if ($room['school'] == $user['id'])
@@ -120,12 +118,7 @@
                                                             @endif
                                                             @endforeach
                                                         </td>
-                                                        <td class="col-auto" style="text-align:center;">{{$room['nos']}}</td>
-                                                        <td class="col-auto">{{$room['created_at']}}</td>
-                                                        <td class="col-auto">
-                                                        <a href=""><i class="bi bi-stack"></i></a>
-                                                        <a href=""><i class="bi bi-stack"></i></a>
-                                                        </td>
+                                                        <td class="col-3">{{$room['created_at']}}</td>
                                                     </tr>
                                                 @endforeach
                                                 </tbody>
@@ -144,8 +137,8 @@
                             <div class="card-content pb-4">
                             @foreach($users as $user)
                                 <div class="recent-message d-flex px-4 py-3">
-                                    <div class="avatar avatar-lg">
-                                        <img src="assets/images/faces/4.jpg">
+                                    <div class="avatar-lg">
+                                        <i class="bi bi-building" style="font-size: 40px;"></i>
                                     </div>
                                     <div class="name ms-4">
                                         <h5 class="mb-1" title="{{$user['created_at']}}">{{$user['name']}}</h5>

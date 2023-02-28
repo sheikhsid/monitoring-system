@@ -2,23 +2,24 @@
 
 @section('content')
 
-
-
-@if (Auth::user()->role_as == '7')
-    <script>window.location = "/admin";</script>
-@endif
-
 <div class="page-content">
                 <section class="row">
                     <div class="col-12 col-lg-3">
                         <div class="card">
                             <div class="card-body py-4">
                                 <div class="d-flex align-items-center">
-                                    <div class="avatar">
-                                        <img src="{{ url('/images/faces/4.jpg') }}">
+                                    <div class="avatar-lg">
+                                        <i class="bi bi-building" style="font-size: 40px;position: relative;top: 10px;left: 10px;color: #54b5c5;"></i>
                                     </div>
                                     <div class="name ms-4">
-                                        <h5 class="font-bold">{{Auth::user()->name}}</h5>
+                                        <h5 class="font-bold">
+                                            @foreach($users as $user)
+                                                @if ($room['school'] == $user['id'])
+                                                    {{$user['name']}}
+                                                @else
+                                                @endif
+                                            @endforeach    
+                                        </h5>
                                         <h6>{{$room['room']}}</h6>
                                     </div>
                                 </div>

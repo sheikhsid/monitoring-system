@@ -17,7 +17,7 @@ class Data extends Controller
         $users= User::all()->where('role_as',"0");
 
         $roomcount= Room::all()->count();
-        $rooms= Room::all();
+        $rooms= Room::orderBy('id', 'desc')->get()->take(6);
 
         $studentcount= Student::all()->count();
 
@@ -27,15 +27,25 @@ class Data extends Controller
     // Get list from School from database
     function getSchool(){
         
-        $users= User::all()->where('role_as',"0");
+        $users= User::orderBy('id', 'desc')->get()->where('role_as',"0");
 
         return view('admin/schools',['users'=>$users]);
+    }
+
+    //Delete Data
+    function deleteSchool($id){
+
+        $data= User::find($id);
+        $data->delete();  
+
+        return redirect('/admin/schools');      
+
     }
 
     // Get list from Room from database
     function getRooms(){
         
-        $rooms= Room::all();
+        $rooms= Room::orderBy('id', 'desc')->get();
         $users= User::all()->where('role_as',"0");
 
         return view('admin/rooms',['rooms'=>$rooms, 'users'=>$users]);
@@ -51,6 +61,16 @@ class Data extends Controller
        echo  $room->save();
         
         return redirect('/admin/rooms');
+
+    }
+
+     //Delete Data
+     function deleteRoom($id){
+
+        $data= Room::find($id);
+        $data->delete();  
+
+        return redirect('/admin/rooms');      
 
     }
 }
