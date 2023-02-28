@@ -47,7 +47,7 @@
         <footer>
                 <div class="footer clearfix mb-0 text-muted">
                     <div class="float-start">
-                        <p>Immensive Monitoring System</p>
+                        <p>Weld Monitoring System</p>
                     </div>
                     <div class="float-end">
                         <p>All Rights Reserved by <a href="https://www.immensive.it/" target="_blank">Immensive</a>.</p>

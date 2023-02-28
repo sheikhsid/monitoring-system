@@ -7,7 +7,7 @@
 <x-sidebar />
         <div id="main"> 
             <div class="page-heading">
-                <h3>Monitoring System</h3>
+                <h3>Weld Monitoring System</h3>
             </div>
             <div class="page-content">
                 <section class="row">
