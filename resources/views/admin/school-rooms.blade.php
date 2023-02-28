@@ -2,25 +2,19 @@
 <div id="app" class="admin">
     <x-sidebar />
     <div id="main">
-            <header class="mb-3">
-                <a href="#" class="burger-btn d-block d-xl-none">
-                    <i class="bi bi-justify fs-3"></i>
-                </a>
-            </header>
-
             <div class="page-heading">
                 <div class="page-title">
                     <div class="row">
                         <div class="col-12 col-md-6 order-md-1 order-last">
-                            <h3>All Schools</h3>
+                            <h3>All Rooms in {{ $school['name'] }}</h3>
                             <p class="text-subtitle text-muted">List of registerd schools</p>
                         </div>
                         <div class="col-12 col-md-6 order-md-2 order-first">
                             <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">All Schools</li>
-                                    <li class="breadcrumb-item"><a href="/register" target="_blank">Add New</a></li>
+                                    <li class="breadcrumb-item"><a href="/admin/schools">All Schools</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">View Rooms</li>
                                 </ol>
                             </nav>
                         </div>
@@ -32,29 +26,25 @@
                     <div class="row match-height">
                         <div class="row">
                             <div class="col-12 col-xl-12">
-                                <div class="card">
+                            <div class="card">
                                     <div class="card-body">
                                         <div class="table-responsive">
                                             <table class="table table-hover table-lg">
                                                 <thead>
                                                     <tr>
-                                                        <th>School ID</th>
-                                                        <th>School Name</th>
-                                                        <th>Email Address</th>
-                                                        <th>Registration</th>
-                                                        <th>Delete</th>
+                                                        <th>Room Name</th>
+                                                        <th>Created Date</th>
+                                                        <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                @foreach($users as $user)
+                                                @foreach($rooms as $room)
                                                     <tr>
-                                                        <td class="col-1 ">{{$user['id']}}</td>
-                                                        <td class="col-3">{{$user['name']}}</td>
-                                                        <td class="col-auto">{{$user['email']}}</td>
-                                                        <td class="col-auto">{{$user['created_at']}}</td>
+                                                        <td class="col-3">{{$room['room']}}</td>
+                                                        <td class="col-auto">{{$room['created_at']}}</td>
                                                         <td class="col-1">
-                                                            <a href="/school/{{$user['id']}}" target="_blank" style="margin-right: 10px;"><i class="bi bi-display"></i></a>
-                                                            <a href="/admin/school/{{$user['id']}}"><i class="bi bi-trash"></i></a>
+                                                        <a href="/room/{{$room['id']}}" target="_blank" style="margin-right: 10px;"><i class="bi bi-eye"></i></a>
+                                                        <a href="/admin/room/{{$room['id']}}"><i class="bi bi-trash"></i></a>
                                                         </td>
                                                     </tr>
                                                 @endforeach

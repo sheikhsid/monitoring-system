@@ -15,8 +15,9 @@ class Students extends Controller
     function viewRooms(){
 
         $rooms = Room::all()->where('school', (Auth::user()->id));
+        $students= Student::all();
 
-        return view('/home',['rooms'=>$rooms]);
+        return view('/home',['rooms'=>$rooms, 'students'=>$students]);
 
     }
 
@@ -64,12 +65,12 @@ class Students extends Controller
     public function show($id)
     {
         $school = User::all('id','name')->find($id);
-        $rooms = Room::all('id','room','school')->where('school' , ($school->id));
+        $rooms = Room::all('id','room','school')->where('school' , ($school->id))->toArray();
         
         return [
             "status" => "School Data",
             "school" => $school,
-            "rooms" => $rooms,
+            "rooms" =>  array_values($rooms)
         ];
     } 
 

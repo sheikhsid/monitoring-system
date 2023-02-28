@@ -28,6 +28,7 @@
                 @if (Auth::check())
                 <span>
                     <ul>
+                        <li style="background: #12171abf;">{{ \Carbon\Carbon::now()->toDateString() }} </li>
                         <li><a href="/home">Home</a></li>
                         <li><a href="/logout">Logout</a></li>
                     </ul>

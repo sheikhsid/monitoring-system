@@ -1311,6 +1311,26 @@ a {
 }
 option.none {
     font-size: 0;
+}.card.pop .card-body img {
+    width: 310px;
+    padding-bottom: 30px;
+}.card.pop:hover {
+    transform: scale(1.05);
+}.card.pop {
+    transition: 0.5s;
+}.card.pop span.active {
+    position: absolute;
+    background: #52b0c1;
+    color: #fff;
+    height: 30px;
+    width: 60px;
+    border-top-right-radius: 10px;
+    top: 0;
+    right: 0;
+    padding-top: 3px;
+}h1.welcome-heading {
+    text-align: center;
+    margin-bottom: 100px;
 }
 @media only screen and (max-width: 480px) {
     h3.logo {
@@ -1324,5 +1344,11 @@ option.none {
     }.float-start, .float-end {
         float: initial !important;
         text-align: center;
+    }
+    div#sidebar{
+        display:none;
+    }
+    .admin #main {
+        padding: 2rem;
     }
   }

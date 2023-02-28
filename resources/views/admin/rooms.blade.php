@@ -2,12 +2,6 @@
 <div id="app" class="admin">
     <x-sidebar />
     <div id="main">
-            <header class="mb-3">
-                <a href="#" class="burger-btn d-block d-xl-none">
-                    <i class="bi bi-justify fs-3"></i>
-                </a>
-            </header>
-
             <div class="page-heading">
                 <div class="page-title">
                     <div class="row">
@@ -74,6 +68,7 @@
                                                     <tr>
                                                         <th>Room Name</th>
                                                         <th>School Name</th>
+                                                        <th>Active Students</th>
                                                         <th>Created Date</th>
                                                         <th>Action</th>
                                                     </tr>
@@ -81,16 +76,17 @@
                                                 <tbody>
                                                 @foreach($rooms as $room)
                                                     <tr>
-                                                        <td class="col-3">{{$room['room']}}</td>
+                                                        <td class="col-auto">{{$room['room']}}</td>
                                                         <td class="col-auto">
                                                             @foreach($users as $user)
                                                             @if ($room['school'] == $user['id'])
-                                                            {{$user['name']}}
+                                                            <a href="/admin/school-rooms/{{$user['id']}}">{{$user['name']}}</a>
                                                             @else
                                                             @endif
                                                             @endforeach
                                                         </td>
-                                                        <td class="col-auto">{{$room['created_at']}}</td>
+                                                        <td class="col-2" style="padding-left: 60px;">0{{ $students->where('room_id', $room['id'])->count() }}</td>
+                                                        <td class="col-2">{{$room['created_at']}}</td>
                                                         <td class="col-1">
                                                         <a href="/room/{{$room['id']}}" target="_blank" style="margin-right: 10px;"><i class="bi bi-eye"></i></a>
                                                         <a href="/admin/room/{{$room['id']}}"><i class="bi bi-trash"></i></a>

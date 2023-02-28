@@ -42,13 +42,22 @@ class Data extends Controller
 
     }
 
+    public function viewSchool($id)
+    {
+        $school = User::all('id','name')->find($id);
+        $rooms = Room::all()->where('school' , $school->id);
+        
+        return view('admin/school-rooms',['school'=>$school, 'rooms'=>$rooms]);
+    } 
+
     // Get list from Room from database
     function getRooms(){
         
         $rooms= Room::orderBy('id', 'desc')->get();
         $users= User::all()->where('role_as',"0");
+        $students= Student::all();
 
-        return view('admin/rooms',['rooms'=>$rooms, 'users'=>$users]);
+        return view('admin/rooms',['rooms'=>$rooms, 'users'=>$users, 'students'=>$students]);
     }
 
     //Check validation and add License

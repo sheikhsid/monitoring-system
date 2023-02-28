@@ -2,13 +2,7 @@
 <div id="app" class="admin">
     <x-sidebar />
     <div id="main">
-            <header class="mb-3">
-                <a href="#" class="burger-btn d-block d-xl-none">
-                    <i class="bi bi-justify fs-3"></i>
-                </a>
-            </header>
-
-            <div class="page-heading">
+        <div class="page-heading">
                 <div class="page-title">
                     <div class="row">
                         <div class="col-12 col-md-6 order-md-1 order-last">
@@ -50,10 +44,10 @@
                                                     <tr>
                                                         <td class="col-1 ">{{$user['id']}}</td>
                                                         <td class="col-3">{{$user['name']}}</td>
-                                                        <td class="col-auto">{{$user['email']}}</td>
+                                                        <td class="col-auto"><a href="mailto:{{$user['email']}}">{{$user['email']}}</a></td>
                                                         <td class="col-auto">{{$user['created_at']}}</td>
                                                         <td class="col-1">
-                                                            <a href="/school/{{$user['id']}}" target="_blank" style="margin-right: 10px;"><i class="bi bi-display"></i></a>
+                                                            <a href="/admin/school-rooms/{{$user['id']}}" style="margin-right: 10px;"><i class="bi bi-display"></i></a>
                                                             <a href="/admin/school/{{$user['id']}}"><i class="bi bi-trash"></i></a>
                                                         </td>
                                                     </tr>
