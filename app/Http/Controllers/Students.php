@@ -20,16 +20,14 @@ class Students extends Controller
     }
 
     //Get Student Data
-    Public function getData(){
+    Public function viewRoom($id){
 
-        
-        $students = Student::all();
-        $countstudents = Student::all()->count();
+        $room= Room::find($id);
 
-        $roomdata = Room::all()->where('id',"1");
-        
+        $students = Student::all()->where('room_id', $id);
+        $countstudents = Student::all()->count();      
 
-        return view('/room', compact('students','countstudents','roomdata'));
+        return view('/room', compact('room','students','countstudents'));
 
     }
 

@@ -10,6 +10,14 @@ use App\Models\Room;
 class Data extends Controller
 {
     // Get list from School from database
+    function getSchool(){
+        
+        $users= User::all()->where('role_as',"0");
+
+        return view('admin/schools',['users'=>$users]);
+    }
+
+    // Get list from Room from database
     function getRooms(){
         
         $rooms= Room::all();

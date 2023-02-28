@@ -10,19 +10,20 @@
 
 <div class="page-content">
                 <section class="row">
-                    <div class="col-12 col-lg-2">
-                        @foreach($roomdata as $roomdata) 
+                    <div class="col-12 col-lg-3">
                         <div class="card">
-                            <div class="card-body py-4 px-5">
+                            <div class="card-body py-4">
                                 <div class="d-flex align-items-center">
-                                    <div>
-                                        <h5 class="font-bold">{{$roomdata['institute']}}</h5>
-                                        <h6>{{$roomdata['room']}}</h6>
+                                    <div class="avatar">
+                                        <img src="{{ url('/images/faces/4.jpg') }}">
+                                    </div>
+                                    <div class="name ms-4">
+                                        <h5 class="font-bold">{{Auth::user()->name}}</h5>
+                                        <h6>{{$room['room']}}</h6>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        @endforeach
                         <div class="card">
                             <div class="card-header">
                                 <h4>List Of Students ({{ $countstudents }})</h4>
@@ -44,7 +45,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-10">
+                    <div class="col-12 col-lg-9">
                         <div class="row">
                         @foreach($students as $student) 
                             <div class="col-12 col-xl-4">

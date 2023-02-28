@@ -8,20 +8,22 @@
 
 <div class="page-content">
                 <section class="row justify-content-center">
-                @foreach($rooms as $room) 
-                    <div class="col-12 col-md-10">
+                    <div class="col-12 col-md-8">
                         <div class="row align-items-center">
+                        @foreach($rooms as $room) 
                             <div class="col-12 col-md-4">
                                 <div class="card">
-                                    <div class="card-body">
-                                        <iframe src="" title="" width="100%" height="250"></iframe>
-                                        <h5><a href=""> {{$room['room']}} </a></h5>
-                                    </div>
+                                    <a href="/room/{{$room['id']}}" class="pop">
+                                        <div class="card-body" style="text-align: center;">
+                                            <h5> {{$room['room']}} </h5> </br>
+                                            <h6>No. of Student {{$room['nos']}}</h6>
+                                        </div>
+                                    </a>
                                 </div>
-                            </div>               
+                            </div> 
+                        @endforeach              
                         </div>
                     </div>
-                @endforeach
                 </section>
             </div>
 

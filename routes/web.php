@@ -22,9 +22,8 @@ Auth::routes();
 Route::middleware('auth','isAdmin')->group(function () {
 
     Route::get('/admin', function () { return view('admin/home'); });
-    Route::get('/admin/schools', function () { return view('admin/schools'); });
-    Route::get('/admin/rooms', function () { return view('admin/rooms'); });
 
+    Route::get('/admin/schools',[Data::class,'getSchool'])->name('/admin/schools');
     Route::get('/admin/rooms',[Data::class,'getRooms'])->name('/admin/rooms');
     Route::post('/admin/rooms',[Data::class,'addRoom'])->name('/admin/rooms');
     
@@ -36,7 +35,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/home',[Students::class,'viewRooms'])->name('/home');
 
-    Route::get('/room',[Students::class,'getData'])->name('/room');
+    Route::get('/room/{id}',[Students::class,'viewRoom'])->name('/room');
 
     Route::get('/view/{id}',[Students::class,'viewData'])->name('/view');
 

@@ -45,20 +45,17 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                @foreach($users as $user)
                                                     <tr>
-                                                        <td class="col-3">
-                                                           gfbfgrn
-                                                        </td>
+                                                        <td class="col-3">{{$user['name']}}</td>
+                                                        <td class="col-auto">{{$user['email']}}</td>
+                                                        <td class="col-auto">{{$user['created_at']}}</td>
                                                         <td class="col-auto">
-                                                            <p class=" mb-0">Congratulations</p>
-                                                        </td>
-                                                        <td class="col-auto">
-                                                            <p class=" mb-0">Congratulations</p>
-                                                        </td>
-                                                        <td class="col-auto">
-                                                            <p class=" mb-0">Congratulations</p>
+                                                            <a href=""><i class="bi bi-stack"></i></a>
+                                                            <a href=""><i class="bi bi-stack"></i></a>
                                                         </td>
                                                     </tr>
+                                                @endforeach
                                                 </tbody>
                                             </table>
                                         </div>
