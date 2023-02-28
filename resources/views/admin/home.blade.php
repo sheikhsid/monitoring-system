@@ -22,17 +22,19 @@
                             <div class="col-6 col-lg-3 col-md-6">
                                 <div class="card">
                                     <div class="card-body px-3 py-4-5">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="stats-icon purple">
-                                                    <i class="iconly-boldShow"></i>
+                                        <a href="/admin/schools">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="stats-icon purple">
+                                                        <i class="iconly-boldShow"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <h6 class="text-muted font-semibold">Total Schools</h6>
+                                                    <h6 class="font-extrabold mb-0">0{{ $usercount }}</h6>
                                                 </div>
                                             </div>
-                                            <div class="col-md-8">
-                                                <h6 class="text-muted font-semibold">Total Schools</h6>
-                                                <h6 class="font-extrabold mb-0">112.000</h6>
-                                            </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -47,7 +49,7 @@
                                             </div>
                                             <div class="col-md-8">
                                                 <h6 class="text-muted font-semibold">Class Rooms</h6>
-                                                <h6 class="font-extrabold mb-0">183.000</h6>
+                                                <h6 class="font-extrabold mb-0">0{{ $roomcount }}</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -64,7 +66,7 @@
                                             </div>
                                             <div class="col-md-8">
                                                 <h6 class="text-muted font-semibold">Active Students</h6>
-                                                <h6 class="font-extrabold mb-0">80.000</h6>
+                                                <h6 class="font-extrabold mb-0">0{{ $studentcount }}</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -80,8 +82,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
-                                                <h6 class="text-muted font-semibold">Contact Us</h6>
-                                                <h6 class="font-extrabold mb-0">112</h6>
+                                                <h6 class="text-muted font-semibold">My IP Address</h6>
+                                                <h6 class="font-extrabold mb-0">{{$clientIP = request()->ip();}}</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -102,24 +104,30 @@
                                                         <th>School Name</th>
                                                         <th>Room Name</th>
                                                         <th>No. of Students</th>
+                                                        <th>Created Date</th>
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                @foreach($rooms as $room)
                                                     <tr>
-                                                        <td class="col-3">
-                                                           gfbfgrn
-                                                        </td>
+                                                        <td class="col-3">{{$room['room']}}</td>
                                                         <td class="col-auto">
-                                                            <p class=" mb-0">Congratulations</p>
+                                                            @foreach($users as $user)
+                                                            @if ($room['school'] == $user['id'])
+                                                            {{$user['name']}}
+                                                            @else
+                                                            @endif
+                                                            @endforeach
                                                         </td>
+                                                        <td class="col-auto" style="text-align:center;">{{$room['nos']}}</td>
+                                                        <td class="col-auto">{{$room['created_at']}}</td>
                                                         <td class="col-auto">
-                                                            <p class=" mb-0">Congratulations</p>
-                                                        </td>
-                                                        <td class="col-auto">
-                                                            <p class=" mb-0">Congratulations</p>
+                                                        <a href=""><i class="bi bi-stack"></i></a>
+                                                        <a href=""><i class="bi bi-stack"></i></a>
                                                         </td>
                                                     </tr>
+                                                @endforeach
                                                 </tbody>
                                             </table>
                                         </div>
@@ -134,33 +142,17 @@
                                 <h4>List of Schools</h4>
                             </div>
                             <div class="card-content pb-4">
+                            @foreach($users as $user)
                                 <div class="recent-message d-flex px-4 py-3">
                                     <div class="avatar avatar-lg">
                                         <img src="assets/images/faces/4.jpg">
                                     </div>
                                     <div class="name ms-4">
-                                        <h5 class="mb-1">Hank Schrader</h5>
-                                        <h6 class="text-muted mb-0">@johnducky</h6>
-                                    </div>
+                                        <h5 class="mb-1" title="{{$user['created_at']}}">{{$user['name']}}</h5>
+                                        <h6 class="text-muted mb-0"><a href="mailto:{{$user['email']}}">{{$user['email']}}</a></h6>
+                                    </div>   
                                 </div>
-                                <div class="recent-message d-flex px-4 py-3">
-                                    <div class="avatar avatar-lg">
-                                        <img src="assets/images/faces/5.jpg">
-                                    </div>
-                                    <div class="name ms-4">
-                                        <h5 class="mb-1">Dean Winchester</h5>
-                                        <h6 class="text-muted mb-0">@imdean</h6>
-                                    </div>
-                                </div>
-                                <div class="recent-message d-flex px-4 py-3">
-                                    <div class="avatar avatar-lg">
-                                        <img src="assets/images/faces/1.jpg">
-                                    </div>
-                                    <div class="name ms-4">
-                                        <h5 class="mb-1">John Dodol</h5>
-                                        <h6 class="text-muted mb-0">@dodoljohn</h6>
-                                    </div>
-                                </div>
+                            @endforeach
                             </div>
                         </div>
                     </div>

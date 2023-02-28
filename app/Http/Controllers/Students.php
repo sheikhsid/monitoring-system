@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\Student;
 use App\Models\Room;
 
@@ -49,25 +50,37 @@ class Students extends Controller
     // API Controllers
     //
 
+    public function getSchoolapi()
+    {
+        $schools = User::all('id','name', 'role_as')->where('role_as',"0");
+
+        return [
+            "status" => "All School",
+            "schools" => $schools
+        ];
+    }  
+
+    public function show($id)
+    {
+        $school = User::all('id','name')->find($id);
+        $rooms = Room::all('id','room','school')->where('school' , ($school->id))   ;
+        
+        return [
+            "status" => "School Data",
+            "school" => $school,
+            "rooms" => $rooms,
+        ];
+    } 
+
     public function index()
     {
-        $students = Student::all('id', 'student_name', 'ip_address');
+        $students = Student::all('id', 'student_name', 'ip_address', 'room_id');
 
         return [
             "status" => "All Data",
             "data" => $students
         ];
-    }
-
-    public function show($id)
-    {
-        $student = Student::find($id);
-        
-        return [
-            "status" => "Single Data",
-            "data" => $student
-        ];
-    }    
+    }  
 
     public function store(Request $request)
     {
@@ -75,6 +88,7 @@ class Students extends Controller
         $student->room_id = "1";
         $student->student_name = $request->student_name;
         $student->ip_address = $request->ip_address;
+        $student->room_id = $request->room_id;
         $student->save();
 
         return response()->json(['message'=>'Success'], 200);
@@ -85,7 +99,6 @@ class Students extends Controller
     public function destroy($id)
     {
         return Student::destroy($id);
-
         return response()->json(['message'=>'Delete'], 200);
     }
 

@@ -38,6 +38,7 @@
                                             <table class="table table-hover table-lg">
                                                 <thead>
                                                     <tr>
+                                                        <th>School ID</th>
                                                         <th>School Name</th>
                                                         <th>Email Address</th>
                                                         <th>Registration</th>
@@ -47,10 +48,11 @@
                                                 <tbody>
                                                 @foreach($users as $user)
                                                     <tr>
+                                                        <td class="col-1 ">{{$user['id']}}</td>
                                                         <td class="col-3">{{$user['name']}}</td>
                                                         <td class="col-auto">{{$user['email']}}</td>
                                                         <td class="col-auto">{{$user['created_at']}}</td>
-                                                        <td class="col-auto">
+                                                        <td class="col-1">
                                                             <a href=""><i class="bi bi-stack"></i></a>
                                                             <a href=""><i class="bi bi-stack"></i></a>
                                                         </td>
