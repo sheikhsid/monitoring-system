@@ -6,15 +6,15 @@
                 <div class="page-title">
                     <div class="row">
                         <div class="col-12 col-md-6 order-md-1 order-last">
-                            <h3>All Rooms in {{ $school['name'] }}</h3>
-                            <p class="text-subtitle text-muted">List of registerd schools</p>
+                            <h3>All {{ $settings['room'] }} in {{ $school['name'] }}</h3>
+                            <p class="text-subtitle text-muted">List of added {{ $settings['room'] }}</p>
                         </div>
                         <div class="col-12 col-md-6 order-md-2 order-first">
                             <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-                                    <li class="breadcrumb-item"><a href="/admin/schools">All Schools</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">View Rooms</li>
+                                    <li class="breadcrumb-item"><a href="/admin/schools">All {{ $settings['school'] }}</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">View {{ $settings['school'] }}</li>
                                 </ol>
                             </nav>
                         </div>
@@ -32,7 +32,7 @@
                                             <table class="table table-hover table-lg">
                                                 <thead>
                                                     <tr>
-                                                        <th>Room Name</th>
+                                                        <th>{{ $settings['room'] }} Name</th>
                                                         <th>Created Date</th>
                                                         <th>Action</th>
                                                     </tr>

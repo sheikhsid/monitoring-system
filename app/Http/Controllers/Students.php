@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Student;
 use App\Models\Room;
+use App\Models\Setting;
 
 class Students extends Controller
 {
@@ -14,10 +15,14 @@ class Students extends Controller
     // Get list from database
     function viewRooms(){
 
+        $settings= Setting::all()->where('user_id', (Auth::user()->id))->first();
+        if($settings == ''){
+            $settings['dateortime'] = '0';
+        }else{}
         $rooms = Room::all()->where('school', (Auth::user()->id));
         $students= Student::all();
 
-        return view('/home',['rooms'=>$rooms, 'students'=>$students]);
+        return view('/home',['settings'=>$settings, 'rooms'=>$rooms, 'students'=>$students]);
 
     }
 
@@ -26,11 +31,15 @@ class Students extends Controller
 
         $room= Room::find($id);
 
+        $settings= Setting::all()->where('user_id', (Auth::user()->id))->first();
+        if($settings == ''){
+            $settings['list_name'] = 'Elenco degli studenti';
+        }else{}
         $students = Student::all()->where('room_id', $id);
         $countstudents = Student::all()->where('room_id', $id)->count();
         $users = User::all('id','name', 'role_as')->where('role_as',"0");   
 
-        return view('/room', compact('room','students','countstudents','users'));
+        return view('/room', compact('settings','room','students','countstudents','users'));
 
     }
 
@@ -38,12 +47,19 @@ class Students extends Controller
     function viewData($id){
 
         $data= Student::find($id);
-
+        $settings= Setting::all()->where('user_id', (Auth::user()->id))->first();
+        if($settings == ''){
+            $settings['name'] = 'Plateform Name';
+            $settings['school'] = 'Sector';
+            $settings['room'] = 'Groups';
+            $settings['student'] = 'Participants';
+            $settings['copyrights'] = 'Company';
+        }else{}
         $students = Student::all();
         $countstudents = Student::all()->count();
         $roomdata = Room::all()->where('id',"1");
 
-        return view('/view',['data'=>$data, 'students'=>$students, 'countstudents'=>$countstudents, 'roomdata'=>$roomdata]);   
+        return view('/view',['settings'=>$settings, 'data'=>$data, 'students'=>$students, 'countstudents'=>$countstudents, 'roomdata'=>$roomdata]);   
 
     }
 

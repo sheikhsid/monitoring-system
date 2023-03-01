@@ -6,14 +6,14 @@
                 <div class="page-title">
                     <div class="row">
                         <div class="col-12 col-md-6 order-md-1 order-last">
-                            <h3>All Rooms</h3>
-                            <p class="text-subtitle text-muted">Add new Rooms and see the list of registerd rooms</p>
+                            <h3>All {{ $settings['room'] }}</h3>
+                            <p class="text-subtitle text-muted">Add new {{ $settings['room'] }} and see the list of Added {{ $settings['room'] }}</p>
                         </div>
                         <div class="col-12 col-md-6 order-md-2 order-first">
                             <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">All Rooms</li>
+                                    <li class="breadcrumb-item active" aria-current="page">All {{ $settings['room'] }}</li>
                                 </ol>
                             </nav>
                         </div>
@@ -32,14 +32,14 @@
                                             <div class="row">
                                                 <div class="col-md-5 col-12">
                                                     <div class="form-group">
-                                                        <input type="text" id="email-id-column" class="form-control" placeholder="Room Name" name="room" required>
+                                                        <input type="text" id="email-id-column" class="form-control" placeholder="{{ $settings['room'] }} Name" name="room" required>
                                                         @error('room'){{$message}}@enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-md-5 col-12">
                                                     <div class="form-group">
                                                     <select class="form-control" name="school" required>
-                                                        <option value="" class="none">Select School</option>
+                                                        <option value="" class="none">Select {{ $settings['school'] }}</option>
                                                         @foreach($users as $user)
                                                         <option value="{{$user['id']}}">{{$user['name']}}</option>
                                                         @endforeach
@@ -66,9 +66,9 @@
                                             <table class="table table-hover table-lg">
                                                 <thead>
                                                     <tr>
-                                                        <th>Room Name</th>
-                                                        <th>School Name</th>
-                                                        <th>Active Students</th>
+                                                        <th>{{ $settings['room'] }} Name</th>
+                                                        <th>{{ $settings['school'] }} Name</th>
+                                                        <th>Active {{ $settings['student'] }}</th>
                                                         <th>Created Date</th>
                                                         <th>Action</th>
                                                     </tr>

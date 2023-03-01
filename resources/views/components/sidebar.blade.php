@@ -33,6 +33,14 @@
                                 <span>All Rooms</span>
                             </a>
                         </li>
+
+                        <li class="sidebar-item">
+                            <a href="/admin/settings" class='sidebar-link'>
+                                <i class="bi bi-gear"></i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+
                         <li class="sidebar-item" style="position: absolute !important;bottom: 50px;">
                             <a href="/logout" class='sidebar-link'>
                                 <i class="bi bi-power"></i>

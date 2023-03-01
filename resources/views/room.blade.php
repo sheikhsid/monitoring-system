@@ -27,7 +27,7 @@
                         </div>
                         <div class="card">
                             <div class="card-header">
-                                <h4>Elenco degli studenti ({{ $countstudents }})</h4>
+                                <h4>{{ $settings['list_name'] }} ({{ $countstudents }})</h4>
                             </div>
                             <div class="card-content pb-4">
                             @foreach($students as $student) 

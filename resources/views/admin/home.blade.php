@@ -1,13 +1,10 @@
 @extends('layouts.app')
 
-
-
-
 <div id="app" class="admin">
-<x-sidebar />
+<x-sidebar :latestPosts="$settings"/>
         <div id="main"> 
             <div class="page-heading">
-                <h3>Weld Monitoring System</h3>
+                <h3>{{ $settings['name'] }}</h3>
             </div>
             <div class="page-content">
                 <section class="row">
@@ -24,7 +21,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <h6 class="text-muted font-semibold">Total Schools</h6>
+                                                    <h6 class="text-muted font-semibold">Total {{ $settings['school'] }}</h6>
                                                     <h6 class="font-extrabold mb-0">0{{ $usercount }}</h6>
                                                 </div>
                                             </div>
@@ -43,7 +40,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <h6 class="text-muted font-semibold">Class Rooms</h6>
+                                                    <h6 class="text-muted font-semibold">Total {{ $settings['room'] }}</h6>
                                                     <h6 class="font-extrabold mb-0">0{{ $roomcount }}</h6>
                                                 </div>
                                             </div>
@@ -61,7 +58,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
-                                                <h6 class="text-muted font-semibold">Active Students</h6>
+                                                <h6 class="text-muted font-semibold">Active {{ $settings['student'] }}</h6>
                                                 <h6 class="font-extrabold mb-0">0{{ $studentcount }}</h6>
                                             </div>
                                         </div>
@@ -90,15 +87,15 @@
                             <div class="col-12 col-xl-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4>Room Details</h4>
+                                        <h4>{{ $settings['room'] }} Details</h4>
                                     </div>
                                     <div class="card-body">
                                         <div class="table-responsive">
                                             <table class="table table-hover table-lg">
                                                 <thead>
                                                     <tr>
-                                                        <th>School Name</th>
-                                                        <th>Room Name</th>
+                                                        <th>{{ $settings['room'] }} Name</th>
+                                                        <th>{{ $settings['school'] }} Name</th>
                                                         <th>Created Date</th>
                                                     </tr>
                                                 </thead>
@@ -128,7 +125,7 @@
                     <div class="col-12 col-lg-3">
                         <div class="card">
                             <div class="card-header">
-                                <h4>List of Schools</h4>
+                                <h4>List of {{ $settings['school'] }}</h4>
                             </div>
                             <div class="card-content pb-4">
                             @foreach($users as $user)

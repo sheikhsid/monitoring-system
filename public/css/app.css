@@ -427,7 +427,7 @@
     margin-bottom: 0.7rem;
 }
 .form-group label {
-    color: rgba(35, 28, 99, 0.7);
+    color: rgb(255 255 255 / 81%);
     font-weight: 600;
 }
 .form-group small {

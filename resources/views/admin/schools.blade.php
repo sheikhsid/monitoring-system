@@ -6,14 +6,14 @@
                 <div class="page-title">
                     <div class="row">
                         <div class="col-12 col-md-6 order-md-1 order-last">
-                            <h3>All Schools</h3>
-                            <p class="text-subtitle text-muted">List of registerd schools</p>
+                            <h3>All {{ $settings['school'] }}</h3>
+                            <p class="text-subtitle text-muted">List of registerd {{ $settings['school'] }}</p>
                         </div>
                         <div class="col-12 col-md-6 order-md-2 order-first">
                             <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">All Schools</li>
+                                    <li class="breadcrumb-item active" aria-current="page">All {{ $settings['school'] }}</li>
                                     <li class="breadcrumb-item"><a href="/register" target="_blank">Add New</a></li>
                                 </ol>
                             </nav>
@@ -32,8 +32,8 @@
                                             <table class="table table-hover table-lg">
                                                 <thead>
                                                     <tr>
-                                                        <th>School ID</th>
-                                                        <th>School Name</th>
+                                                        <th>{{ $settings['school'] }} ID</th>
+                                                        <th>{{ $settings['school'] }} Name</th>
                                                         <th>Email Address</th>
                                                         <th>Registration</th>
                                                         <th>Delete</th>
