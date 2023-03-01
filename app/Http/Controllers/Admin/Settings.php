@@ -10,6 +10,21 @@ use App\Models\Setting;
 class Settings extends Controller
 {
     // Get list from Settings from database
+    function getAPI(){
+        
+        $settings= Setting::all()->where('user_id', (Auth::user()->id))->first();
+
+        if($settings == ''){
+            $settings['school'] = '0';
+            $settings['room'] = '0';
+            $settings['student'] = '0';
+        }else{}
+
+        return view('admin/api',['settings'=>$settings]);
+    }
+
+
+    // Get list from Settings from database
     function getSetting(){
         
         $settings= Setting::all()->where('user_id', (Auth::user()->id))->first();
@@ -22,6 +37,7 @@ class Settings extends Controller
 
         return view('admin/settings',['settings'=>$settings]);
     }
+
     
     //Check validation and add Settings
     function addSetting(Request $req){

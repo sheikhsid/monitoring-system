@@ -35,6 +35,13 @@
                         </li>
 
                         <li class="sidebar-item">
+                            <a href="/admin/api" class='sidebar-link'>
+                                <i class="bi bi-cloud"></i>
+                                <span>API Details</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
                             <a href="/admin/settings" class='sidebar-link'>
                                 <i class="bi bi-gear"></i>
                                 <span>Settings</span>

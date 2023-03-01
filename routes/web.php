@@ -32,6 +32,8 @@ Route::middleware('auth','isAdmin')->group(function () {
     Route::get('/admin/rooms',[Data::class,'getRooms'])->name('/admin/rooms');
     Route::post('/admin/rooms',[Data::class,'addRoom'])->name('/admin/rooms');
     Route::get('/admin/room/{id}',[Data::class,'deleteRoom'])->name('/admin/room');
+    //API Details
+    Route::get('/admin/api',[Settings::class,'getAPI'])->name('/admin/api');
     //Settings
     Route::get('/admin/settings',[Settings::class,'getSetting'])->name('/admin/settings');
     Route::post('/admin/settings',[Settings::class,'addSetting'])->name('/admin/settings');
